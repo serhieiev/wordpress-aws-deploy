@@ -24,7 +24,7 @@ Create password/username pair in AWS Secret Manager that will be used during RDS
 ## Remote backend setup
 
 - Create S3 bucket with unique name
-- Create DynamoDB table (use any table name of your choice but set the partition key to LockID. Leave the remaining settings as default and click create table)
+- Create DynamoDB table (use any table name of your choice but set the partition key to `LockID`. Leave the remaining settings as default and click create table)
 - Configure Terraform to point to this backend
 
 ## Deployment
