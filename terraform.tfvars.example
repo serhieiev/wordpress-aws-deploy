@@ -1,0 +1,4 @@
+region = "us-east-1"
+
+ssh_pub_key_file  = "~/.ssh/id_rsa.pub"
+ssh_priv_key_file = "~/.ssh/id_rsa"
