@@ -6,7 +6,7 @@ Terraform v1.3.6
 ansible core 2.12.5
 ```
 
-Generate shared ssh key you are going to use with AWS and Azure cloud providers. Use `ssh-keygen` or similar tools for it [How to Use ssh-keygen to Generate a New SSH Key?](https://www.ssh.com/academy/ssh/keygen)
+Generate shared ssh key you are going to use with AWS cloud provider. Use `ssh-keygen` or similar tools for it [How to Use ssh-keygen to Generate a New SSH Key?](https://www.ssh.com/academy/ssh/keygen)
 
 ## AWS Setup
 
