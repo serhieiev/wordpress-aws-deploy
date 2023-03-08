@@ -1,0 +1,16 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - 80:80
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=rds_host
+      - WORDPRESS_DB_PORT=rds_port
+      - WORDPRESS_DB_USER=rds_user
+      - WORDPRESS_DB_PASSWORD=rds_password
+      - WORDPRESS_DB_NAME=rds_database
+    volumes:
+      - wp-content:/var/www/html/wp-content
+volumes:
+  wp-content:
