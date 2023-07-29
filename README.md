@@ -6,24 +6,24 @@ This project provides a template for deploying a WordPress application on AWS us
 
 ### AWS Services ☁️
 
-- ![EC2](https://img.icons8.com/color/48/000000/amazon-web-services.png) EC2
-- ![VPC](https://img.icons8.com/color/48/000000/amazon-web-services.png) VPC
-- ![RDS](https://img.icons8.com/color/48/000000/amazon-web-services.png) RDS
-- ![Secrets Manager](https://img.icons8.com/color/48/000000/amazon-web-services.png) Secrets Manager
+- ![EC2](https://img.shields.io/badge/AWS-EC2-orange)
+- ![VPC](https://img.shields.io/badge/AWS-VPC-orange)
+- ![RDS](https://img.shields.io/badge/AWS-RDS-orange)
+- ![Secrets Manager](https://img.shields.io/badge/AWS-Secrets_Manager-orange)
 
 ### Remote Backend for Terraform 🗄️
 
-- ![S3](https://img.icons8.com/color/48/000000/amazon-web-services.png) S3
-- ![DynamoDB](https://img.icons8.com/color/48/000000/amazon-web-services.png) DynamoDB
+- ![S3](https://img.shields.io/badge/AWS-S3-orange)
+- ![DynamoDB](https://img.shields.io/badge/AWS-DynamoDB-orange)
 
 ### Infrastructure as Code 🏗️
 
-- ![Terraform](https://img.icons8.com/color/48/000000/terraform.png) Terraform
-- ![Ansible](https://img.icons8.com/color/48/000000/ansible.png) Ansible
+- ![Terraform](https://img.shields.io/badge/-Terraform-blueviolet)
+- ![Ansible](https://img.shields.io/badge/-Ansible-yellow)
 
 ### Containerization 📦
 
-- ![Docker](https://img.icons8.com/color/48/000000/docker.png) Docker
+- ![Docker](https://img.shields.io/badge/-Docker-blue)
 
 
 ## Prerequisites
@@ -84,4 +84,4 @@ Enjoy your WordPress application deployed on AWS! 🎉
 
 ## Credits
 
-Icons made by [Icons8](https://icons8.com)
+Icons made by [Shields.io](https://shields.io)
