@@ -34,6 +34,20 @@ resource "aws_instance" "instance" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = var.vpc_security_group_ids
 
+  # Enable IMDS
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+  }
+
+  # Enable EBS encryption
+  ebs_block_device {
+    device_name = "/dev/sda1"
+    encrypted   = true
+    volume_size = 30  # Update this to your desired volume size
+  }
+
   tags = {
     Name = "WP-instance"
   }

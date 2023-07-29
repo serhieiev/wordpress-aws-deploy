@@ -1,30 +1,58 @@
-# Codica task
+# WordPress Deployment with Terraform, Ansible, and Docker 🚀
 
-## Required package(s) for the host machine:
+This project provides a template for deploying a WordPress application on AWS using Terraform, Ansible, and Docker.
+
+## Technologies Used 💻
+
+### AWS Services ☁️
+
+- ![EC2](https://img.icons8.com/color/48/000000/amazon-web-services.png) EC2
+- ![VPC](https://img.icons8.com/color/48/000000/amazon-web-services.png) VPC
+- ![RDS](https://img.icons8.com/color/48/000000/amazon-web-services.png) RDS
+- ![Secrets Manager](https://img.icons8.com/color/48/000000/amazon-web-services.png) Secrets Manager
+
+### Remote Backend for Terraform 🗄️
+
+- ![S3](https://img.icons8.com/color/48/000000/amazon-web-services.png) S3
+- ![DynamoDB](https://img.icons8.com/color/48/000000/amazon-web-services.png) DynamoDB
+
+### Infrastructure as Code 🏗️
+
+- ![Terraform](https://img.icons8.com/color/48/000000/terraform.png) Terraform
+- ![Ansible](https://img.icons8.com/color/48/000000/ansible.png) Ansible
+
+### Containerization 📦
+
+- ![Docker](https://img.icons8.com/color/48/000000/docker.png) Docker
+
+
+## Prerequisites
 ```
 Terraform v1.3.6
-ansible core 2.12.5
+Ansible Core 2.12.5
 ```
 
-Generate shared ssh key you are going to use with AWS cloud provider. Use `ssh-keygen` or similar tools for it [How to Use ssh-keygen to Generate a New SSH Key?](https://www.ssh.com/academy/ssh/keygen)
+Generate shared ssh key you are going to use with AWS and Azure cloud providers. Use `ssh-keygen` or similar tools for it [How to Use ssh-keygen to Generate a New SSH Key?](https://www.ssh.com/academy/ssh/keygen)
 
 ## AWS Setup
 
-Via AWS Console create a new IAM user and add the `AdministratorAccess` Managed Policy to your IAM user. After user is created save _Access Key ID_ and a _Secret Access Key_, these credentials give access to your AWS account.
+1. Create a new IAM user via the AWS Console and add the AdministratorAccess Managed Policy to your IAM user.
 
-For Terraform to be able to make changes in your AWS account, you will need to set the AWS credentials for the IAM user you created above as the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For example, here is how you can do it in a Unix/Linux/macOS terminal:
+2. After the user is created, save the Access Key ID and Secret Access Key. These credentials give access to your AWS account.
+
+3. Set the AWS credentials for the IAM user as the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. For example, here is how you can do it in a Unix/Linux/macOS terminal:
 
 ```
 $ export AWS_ACCESS_KEY_ID=(your access key id)
 $ export AWS_SECRET_ACCESS_KEY=(your secret access key)
 ```
 
-Create password/username pair in AWS Secret Manager that will be used during RDS Database instance creation.
+4. Create a password/username pair in AWS Secret Manager that will be used during RDS Database instance creation.
 
 ## Remote backend setup
 
 - Create S3 bucket with unique name
-- Create DynamoDB table (use any table name of your choice but set the partition key to `LockID`. Leave the remaining settings as default and click create table)
+- Create DynamoDB table (use any table name of your choice but set the partition key to LockID. Leave the remaining settings as default and click create table)
 - Configure Terraform to point to this backend
 
 ## Deployment
@@ -44,10 +72,16 @@ terraform apply
 
 Review `Outputs:` section and connect to EC2 instance using `aws_ssh_connection_string`.
 
-Execute `wget https://raw.githubusercontent.com/serhieiev/codica/main/compose.yaml` to download `compose.yaml`
+Execute `wget https://raw.githubusercontent.com/serhieiev/codica/main/compose.yaml` to download `compose.yaml`.
 
 Adjust `compose.yaml` according to your RDS DB settings.
 
-Execute `sudo docker compose up -d`
+Execute `sudo docker compose up -d`.
 
-Grab `ip` from the `Outputs:` section and open it in your browser, after that finish WordPress setup. 
+Grab the `ip` from the `Outputs:` section and open it in your browser. Finish the WordPress setup.
+
+Enjoy your WordPress application deployed on AWS! 🎉
+
+## Credits
+
+Icons made by [Icons8](https://icons8.com)

@@ -11,6 +11,9 @@ resource "aws_db_instance" "db" {
   db_subnet_group_name   = var.db_subnet_group_name
   vpc_security_group_ids = var.vpc_security_group_ids
 
+  # Enable storage encryption
+  storage_encrypted = true
+
   tags = {
     Name = "MYSQL-DB"
   }
